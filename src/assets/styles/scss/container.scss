@@ -1,0 +1,28 @@
+@use "mixins";
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  // @include mixins.mq(xxl) {
+  //   max-width: 1400px;
+  // }
+
+  // @include mixins.mq(xl) {
+  //   max-width: 1220px;
+  // }
+
+  @include mixins.mq(lg) {
+    max-width: 992px;
+  }
+
+  @include mixins.mq(md) {
+    max-width: 768px;
+  }
+
+  @include mixins.mq(sm) {
+    max-width: 100%;
+  }
+}

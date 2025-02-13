@@ -1,0 +1,42 @@
+@use "breakpoints";
+@use "sass:map";
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: $font-family;
+		font-weight: $weight;
+		font-style: $style;
+    font-display: swap;
+		src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype'), ('#{$file-path}.woff2') format('woff2');
+	}
+}
+
+@mixin mq($width, $type: max) {
+  @if map.has-key(breakpoints.$breakpoints, $width) {
+    $width: map.get(breakpoints.$breakpoints, $width);
+    @if $type == max {
+      $width: $width - 0.02px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+
+@mixin hover {
+  @include hover-wrapper {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin hover-wrapper {
+  $width: map.get(breakpoints.$breakpoints, md);
+
+	@media only screen and (min-width: $width) {
+    @content;
+  }
+}
+

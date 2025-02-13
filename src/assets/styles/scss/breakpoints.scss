@@ -1,0 +1,12 @@
+// Container-sizes
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  // mobile landscape, tablet (portrait)
+  md: 992px,
+  // chromebooks, ipad pro (portrait), tablet (landscape)
+  lg: 1220px,
+  // most laptops and desktops
+  xl: 1400px,
+  xxl: 1920px,
+);

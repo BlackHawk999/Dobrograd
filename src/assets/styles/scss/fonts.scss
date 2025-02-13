@@ -1,0 +1,5 @@
+@use "mixins";
+
+@include mixins.font-face('Golos', '../../fonts/GolosText-Regular', 400);
+@include mixins.font-face('Golos', '../../fonts/GolosText-Medium', 500);
+@include mixins.font-face('Golos', '../../fonts/GolosText-SemiBold', 600);
