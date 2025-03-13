@@ -21,7 +21,7 @@ $(document).ready(function () {
 
   singleSlider.slick({
     infinite: false,
-    slidesToShow: 1.2,
+    slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
     dots: false,
@@ -160,7 +160,6 @@ $(document).ready(function () {
     cssEase: "linear",
   });
 
-
   chatMobileSlider.slick({
     dots: false,
     arrows: false,
@@ -186,7 +185,7 @@ $(document).ready(function () {
     centerMode: true,
     arrows: false,
     infinite: false,
-    centerPadding: "60px",
+    centerPadding: "40px",
     slidesToShow: 1,
     responsive: [
       {
@@ -194,10 +193,34 @@ $(document).ready(function () {
         settings: {
           arrows: false,
           centerMode: true,
-          centerPadding: "40px",
+          centerPadding: "20px",
           slidesToShow: 1,
         },
       },
     ],
   });
+
+  function animateCards(rowIndex, filterCondition) {
+    var wrappers = $(".dobrograd__palette-colors-wrapper");
+    const rowList = wrappers.eq(rowIndex).find(".dobrograd__palette-color");
+    const filteredList = Array.from(rowList).filter(node => !node.classList.contains(filterCondition))
+    const length = filteredList.length
+    console.log('filteredList :>> ', filteredList);
+
+    // filteredList.forEach(function (index) {
+    //   var $card = $(this);
+    //   setTimeout(function () {
+    //     if(index === 0) {
+    //       filteredList[length - 1].style.maxWidth =
+    //     }
+
+    //     // filteredList.removeClass("animated-first");
+    //     // $card.addClass("animated-first");
+    //   }, index * 3000);
+    // });
+
+    setTimeout(animateCards.bind(this, [rowIndex]), length * 3000);
+  }
+
+  animateCards(0, 'dobrograd__palette-color--mobile');
 });
