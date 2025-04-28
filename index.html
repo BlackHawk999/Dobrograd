@@ -19,7 +19,7 @@
         <video autoplay muted loop class="dobrograd__intro-video">
           <source
             loading="lazy"
-            src="src/assets/video/dobrograd_zaglushka.mp4"
+            src="src/assets/video/dobrograd_zaglushka.webm"
             type="video/mp4"
           />
         </video>
@@ -439,7 +439,7 @@
                   </svg>
                 </button>
                 <div class="dobrograd__app-page-dots-wrapper">
-                  <ul class="custom-dots-app"></ul>
+                  <ul class="custom-dots-desktop"></ul>
                 </div>
                 <button
                   class="dobrograd__app-page-button dobrograd__app-page-next next-btn"
@@ -505,13 +505,13 @@
               <div
                 class="dobrograd__app-page-slide dobrograd__app-page-slide--second"
               >
-              <div class="dobrograd__app-page-slide-img">
-                <img
-                  loading="lazy"
-                  src="src/assets/images/app-slide-2.png"
-                  alt=""
-                />
-              </div>
+                <div class="dobrograd__app-page-slide-img">
+                  <img
+                    loading="lazy"
+                    src="src/assets/images/app-slide-2.png"
+                    alt=""
+                  />
+                </div>
                 <div
                   class="dobrograd__app-page-slide-child dobrograd__app-page-slide-child--search"
                 >
@@ -578,7 +578,7 @@
                 </svg>
               </button>
               <div class="dobrograd__app-page-dots-wrapper">
-                <ul class="custom-dots-app"></ul>
+                <ul class="custom-dots-mobile"></ul>
               </div>
               <button
                 class="dobrograd__app-page-button dobrograd__app-page-next next-btn"
@@ -858,7 +858,9 @@
                 </div>
               </div>
               <div class="dobrograd__interview-actions">
-                <button class="dobrograd__interview-button prev-btn">
+                <button
+                  class="dobrograd__interview-button dobrograd__interview-prev prev-btn"
+                >
                   <svg
                     width="10"
                     height="15"
@@ -873,9 +875,11 @@
                   </svg>
                 </button>
                 <div class="dobrograd__interview-dots-wrapper">
-                  <ul class="custom-dots"></ul>
+                  <ul class="custom-dots-interview"></ul>
                 </div>
-                <button class="dobrograd__interview-button next-btn">
+                <button
+                  class="dobrograd__interview-button dobrograd__interview-next next-btn"
+                >
                   <svg
                     width="10"
                     height="15"
@@ -1198,9 +1202,7 @@
             </div>
             <div class="dobrograd__palette-body">
               <div class="dobrograd__palette-colors-wrapper">
-                <div
-                  class="dobrograd__palette-color dobrograd__palette-color--large"
-                >
+                <div class="dobrograd__palette-color dobrograd__palette-color--green">
                   <span class="dobrograd__palette-color-title">Зелёный</span>
                   <span class="dobrograd__palette-color-title">#1C9272</span>
                 </div>

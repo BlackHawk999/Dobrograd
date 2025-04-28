@@ -6,7 +6,6 @@ $(document).ready(function () {
   sliderFirst.slick({
     arrows: false,
     dots: false,
-    adaptiveHeight: true,
     variableWidth: true,
     speed: 500,
     asNavFor: sliderSecond,
@@ -29,8 +28,10 @@ $(document).ready(function () {
 
   var customDotsContainer = $(".custom-dots");
 
-  customDotsContainer.append('<li class="custom-dot" data-group="0"></li>');
-  customDotsContainer.append('<li class="custom-dot" data-group="1"></li>');
+  if (!customDotsContainer.children().length) {
+    customDotsContainer.append('<li class="custom-dot" data-group="0"></li>');
+    customDotsContainer.append('<li class="custom-dot" data-group="1"></li>');
+  }
 
   $(".custom-dot").on("click", function () {
     var groupIndex = $(this).data("group");
@@ -135,7 +136,7 @@ $(document).ready(function () {
   // Инициализация первого слайдера (десктоп)
   initializeSlider(
     ".dobrograd__app-page-slider",
-    ".custom-dots-app",
+    ".custom-dots-desktop",
     ".dobrograd__app-page-prev",
     ".dobrograd__app-page-next"
   );
@@ -143,22 +144,19 @@ $(document).ready(function () {
   // Инициализация второго слайдера (мобильная версия)
   initializeSlider(
     ".dobrograd__app-page-slider-mobile",
-    ".custom-dots-app-mobile",
-    ".dobrograd__app-page-prev-mobile",
-    ".dobrograd__app-page-next-mobile"
+    ".custom-dots-mobile",
+    ".dobrograd__app-page-prev",
+    ".dobrograd__app-page-next"
   );
 
-  var chatSlider = $(".dobrograd__interview-chat-slider");
-  var chatMobileSlider = $(".dobrograd__interview-mobile-slider");
+  initializeSlider(
+    ".dobrograd__interview-chat-slider",
+    ".custom-dots-interview",
+    ".dobrograd__interview-prev",
+    ".dobrograd__interview-next"
+  );
 
-  chatSlider.slick({
-    dots: false,
-    arrows: false,
-    infinite: false,
-    speed: 500,
-    fade: true,
-    cssEase: "linear",
-  });
+  var chatMobileSlider = $(".dobrograd__interview-mobile-slider");
 
   chatMobileSlider.slick({
     dots: false,
@@ -183,10 +181,12 @@ $(document).ready(function () {
 
   billCenterSlider.slick({
     centerMode: true,
+    variableWidth: true,
     arrows: false,
     infinite: false,
     centerPadding: "40px",
     slidesToShow: 1,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 480,
@@ -203,24 +203,49 @@ $(document).ready(function () {
   function animateCards(rowIndex, filterCondition) {
     var wrappers = $(".dobrograd__palette-colors-wrapper");
     const rowList = wrappers.eq(rowIndex).find(".dobrograd__palette-color");
-    const filteredList = Array.from(rowList).filter(node => !node.classList.contains(filterCondition))
-    const length = filteredList.length
-    console.log('filteredList :>> ', filteredList);
+    const filteredList = Array.from(rowList).filter(
+      (node) => !node.classList.contains(filterCondition)
+    );
 
-    // filteredList.forEach(function (index) {
-    //   var $card = $(this);
-    //   setTimeout(function () {
-    //     if(index === 0) {
-    //       filteredList[length - 1].style.maxWidth =
-    //     }
+    const lastIndex = filteredList.length - 1;
+    let index = 0;
+    setInterval(() => {
+      console.log('filteredList[index] :>> ', filteredList[index]);
+      switch (index) {
+        case 0:
+          filteredList[index].classList.add(
+            "dobrograd__palette-color--large"
+          );
+          filteredList[lastIndex].classList.add(
+            "dobrograd__palette-color--thin"
+          );
+          break;
+        case lastIndex:
+          filteredList[lastIndex - 1].classList.remove(
+            "dobrograd__palette-color--large"
+          );
+          filteredList[lastIndex].classList.remove(
+            "dobrograd__palette-color--thin"
+          );
+          break;
 
-    //     // filteredList.removeClass("animated-first");
-    //     // $card.addClass("animated-first");
-    //   }, index * 3000);
-    // });
+        default:
+          filteredList[index - 1].classList.remove(
+            "dobrograd__palette-color--large"
+          );
+          filteredList[index].classList.add(
+            "dobrograd__palette-color--large"
+          );
+          break;
+      }
 
-    setTimeout(animateCards.bind(this, [rowIndex]), length * 3000);
+      if(index === lastIndex) {
+        index = -1
+      }
+
+      index++
+    }, 2000);
   }
 
-  animateCards(0, 'dobrograd__palette-color--mobile');
+  animateCards(0, "dobrograd__palette-color--mobile");
 });
