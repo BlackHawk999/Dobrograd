@@ -92,6 +92,7 @@
     border-radius: 100px;
 
     @media (max-width: 576px) {
+      padding: 12px 15px;
       color: $color-black;
       background-color: $color-yellow;
     }
@@ -2363,6 +2364,10 @@
 
     &--thin {
       max-width: 80px;
+
+      @media (max-width: 767px) {
+        max-width: unset;
+      }
     }
 
     &--green {
