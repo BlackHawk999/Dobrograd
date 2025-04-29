@@ -788,7 +788,6 @@
   &__app-page-wrapper {
     position: relative;
     display: flex;
-    height: 100%;
     padding: 13px;
     background-color: $color-green;
     border-radius: 40px;
@@ -797,11 +796,14 @@
       flex-direction: column;
     }
 
+    @media (max-width: 767px) {
+      // height: 1410px;
+    }
+
     @media (max-width: 576px) {
       flex-direction: column;
       padding: unset;
       margin: 0 -15px;
-      max-height: 1350px;
     }
   }
 
@@ -822,7 +824,7 @@
     }
 
     @media (max-width: 767px) {
-      height: 437px;
+      height: 405px;
       padding: 20px;
     }
 
@@ -909,9 +911,9 @@
       @media (max-width: 767px) {
         display: flex;
         justify-content: center;
-        margin: 34px 0 30px 0;
+        margin: 0 0 30px 0;
         left: 50%;
-        transform: translate(-50%, 35px);
+        transform: translate(-50%, 30px);
       }
     }
   }
@@ -1005,7 +1007,9 @@
     &--mobile {
       width: 360%;
 
-      @media (max-width: 575.98px) {
+      @media (max-width: 767.98px) {
+        display: flex !important;
+        justify-content: center;
         height: 100% !important;
         max-height: 1300px;
       }
@@ -1429,6 +1433,7 @@
       flex-direction: column;
       height: 100%;
       margin: 0 -15px;
+      background-image: unset;
     }
   }
 
@@ -1446,16 +1451,6 @@
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 
-    // @media (max-width: 992px) {
-    //   position: unset;
-    //   max-width: 100%;
-    //   padding: 20px 40px;
-    //   transform: translateY(25px);
-    //   border-top-left-radius: 20px;
-    //   border-top-right-radius: 20px;
-    //   border-bottom-right-radius: unset;
-    // }
-
     @media (max-width: 767px) {
       position: unset;
       max-width: 100%;
@@ -1464,6 +1459,10 @@
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
       border-bottom-right-radius: unset;
+    }
+
+    @media (max-width: 575px) {
+      padding: 15px;
     }
   }
 
@@ -1492,20 +1491,10 @@
   &__protect-img {
     display: none;
 
-    // @media (max-width: 992px) {
-    //   display: flex;
-    //   justify-content: center;
-    //   align-items: center;
-    //   width: 550px;
-    // }
-
     @media (max-width: 767px) {
+      display: flex;
       width: 100%;
-      height: 519px;
-    }
-
-    @media (max-width: 567px) {
-      width: 360px;
+      height: 100%;
     }
 
     img {
@@ -1586,6 +1575,10 @@
         display: none;
       }
     }
+
+    .slick-list {
+      overflow: unset;
+    }
   }
 
   &__interview-chat-slide {
@@ -1593,6 +1586,7 @@
     align-items: flex-end;
     max-width: 429px;
     max-height: 654px;
+    transform: translateY(95px);
 
     &--mobile {
       width: unset;
@@ -1888,6 +1882,10 @@
     gap: 30px;
     width: 100%;
     max-width: 440px;
+
+    @media (max-width: 1219.98px) {
+      transform: translateX(20px);
+    }
 
     @media (max-width: 992px) {
       gap: 15px;

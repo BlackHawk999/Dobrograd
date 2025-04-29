@@ -1037,7 +1037,6 @@ body {
 .dobrograd__app-page-wrapper {
   position: relative;
   display: flex;
-  height: 100%;
   padding: 13px;
   background-color: #1C9272;
   border-radius: 40px;
@@ -1052,7 +1051,6 @@ body {
     flex-direction: column;
     padding: unset;
     margin: 0 -15px;
-    max-height: 1350px;
   }
 }
 .dobrograd__app-page-info {
@@ -1074,7 +1072,7 @@ body {
 }
 @media (max-width: 767px) {
   .dobrograd__app-page-info {
-    height: 437px;
+    height: 405px;
     padding: 20px;
   }
 }
@@ -1168,9 +1166,9 @@ body {
   .dobrograd__app-page-actions--mobile {
     display: flex;
     justify-content: center;
-    margin: 34px 0 30px 0;
+    margin: 0 0 30px 0;
     left: 50%;
-    transform: translate(-50%, 35px);
+    transform: translate(-50%, 30px);
   }
 }
 .dobrograd__app-page-button {
@@ -1247,8 +1245,10 @@ body {
 .dobrograd__app-page-slide--mobile {
   width: 360%;
 }
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
   .dobrograd__app-page-slide--mobile {
+    display: flex !important;
+    justify-content: center;
     height: 100% !important;
     max-height: 1300px;
   }
@@ -1635,6 +1635,7 @@ body {
     flex-direction: column;
     height: 100%;
     margin: 0 -15px;
+    background-image: unset;
   }
 }
 .dobrograd__protect-info {
@@ -1660,6 +1661,11 @@ body {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: unset;
+  }
+}
+@media (max-width: 575px) {
+  .dobrograd__protect-info {
+    padding: 15px;
   }
 }
 .dobrograd__protect-title {
@@ -1689,13 +1695,9 @@ body {
 }
 @media (max-width: 767px) {
   .dobrograd__protect-img {
+    display: flex;
     width: 100%;
-    height: 519px;
-  }
-}
-@media (max-width: 567px) {
-  .dobrograd__protect-img {
-    width: 360px;
+    height: 100%;
   }
 }
 .dobrograd__protect-img img {
@@ -1771,11 +1773,15 @@ body {
     display: none;
   }
 }
+.dobrograd__interview-chat-slider .slick-list {
+  overflow: unset;
+}
 .dobrograd__interview-chat-slide {
   display: block !important;
   align-items: flex-end;
   max-width: 429px;
   max-height: 654px;
+  transform: translateY(95px);
 }
 .dobrograd__interview-chat-slide--mobile {
   width: unset;
@@ -2061,6 +2067,11 @@ body {
   gap: 30px;
   width: 100%;
   max-width: 440px;
+}
+@media (max-width: 1219.98px) {
+  .dobrograd__command-info {
+    transform: translateX(20px);
+  }
 }
 @media (max-width: 992px) {
   .dobrograd__command-info {
