@@ -86,6 +86,7 @@ $(document).ready(function () {
       speed: 500,
       fade: true,
       cssEase: "linear",
+      adaptiveHeight: true,
     });
 
     // Кастомные точки
@@ -247,5 +248,5 @@ $(document).ready(function () {
     }, 2000);
   }
 
-  animateCards(0, "dobrograd__palette-color--mobile");
+  // animateCards(0, "dobrograd__palette-color--mobile");
 });

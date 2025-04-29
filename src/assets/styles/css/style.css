@@ -345,7 +345,7 @@ body {
     width: 65%;
   }
 }
-@media (max-width: 575px) {
+@media (max-width: 991.98px) {
   .dobrograd__intro-start-child {
     width: 100%;
   }
@@ -588,7 +588,7 @@ body {
   background: #ffffff;
   border-radius: 30px;
 }
-@media (max-width: 576px) {
+@media (max-width: 700px) {
   .dobrograd__about-wrapper {
     flex-direction: column;
     padding: 30px 15px;
@@ -651,14 +651,19 @@ body {
   width: 317px;
   height: 317px;
 }
+@media (max-width: 1235px) {
+  .dobrograd__about-gif {
+    width: 200px;
+  }
+}
 @media (max-width: 992px) {
   .dobrograd__about-gif {
     bottom: 10px;
-    width: 240px;
+    width: 150px;
     height: 240px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 700px) {
   .dobrograd__about-gif {
     position: unset;
     width: 222px;
@@ -1154,7 +1159,7 @@ body {
     bottom: 25px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 991.98px) {
   .dobrograd__app-page-actions {
     display: none;
   }
@@ -1162,7 +1167,7 @@ body {
 .dobrograd__app-page-actions--mobile {
   display: none;
 }
-@media (max-width: 767px) {
+@media (max-width: 991.98px) {
   .dobrograd__app-page-actions--mobile {
     display: flex;
     justify-content: center;
@@ -1182,7 +1187,7 @@ body {
   border-radius: 50%;
   outline: 6px solid #F4F5F5;
 }
-@media (max-width: 992px) {
+@media (max-width: 991.98px) {
   .dobrograd__app-page-button {
     width: 25px;
     height: 25px;
@@ -1222,7 +1227,7 @@ body {
 .dobrograd__app-page-slider-mobile {
   display: none !important;
 }
-@media (max-width: 767px) {
+@media (max-width: 991.98px) {
   .dobrograd__app-page-slider-mobile {
     display: block !important;
     height: 100%;
@@ -1245,7 +1250,7 @@ body {
 .dobrograd__app-page-slide--mobile {
   width: 360%;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .dobrograd__app-page-slide--mobile {
     display: flex !important;
     justify-content: center;
@@ -1777,27 +1782,25 @@ body {
   overflow: unset;
 }
 .dobrograd__interview-chat-slide {
-  display: block !important;
+  display: block;
   align-items: flex-end;
   max-width: 429px;
   max-height: 654px;
   transform: translateY(95px);
 }
 .dobrograd__interview-chat-slide--mobile {
+  display: flex !important;
+  justify-content: center;
   width: unset;
   height: 100%;
   max-width: unset;
   max-height: unset;
+  transform: unset;
 }
 @media (max-width: 992px) {
   .dobrograd__interview-chat-slide--mobile {
     width: 312px;
   }
-}
-.dobrograd__interview-chat-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 .dobrograd__interview-end {
   position: relative;
@@ -1831,9 +1834,9 @@ body {
   display: none;
   margin-top: 20px;
 }
-@media (max-width: 992px) {
+@media (max-width: 991.98px) {
   .dobrograd__interview-mobile-slider {
-    display: flex;
+    display: block;
     width: 550px;
   }
 }
@@ -1883,6 +1886,7 @@ body {
     position: unset;
     justify-content: center;
     max-width: 100%;
+    margin-top: 20px;
   }
 }
 .dobrograd .custom-dots-desktop,
@@ -2415,9 +2419,6 @@ body {
     gap: 10px;
   }
 }
-.dobrograd__palette-colors-wrapper:has(:not(.dobrograd__palette-color--large)) .dobrograd__palette-color {
-  flex: 1;
-}
 .dobrograd__palette-color {
   display: flex;
   flex-direction: column;
@@ -2437,7 +2438,7 @@ body {
 @media (max-width: 767px) {
   .dobrograd__palette-color {
     align-items: center;
-    width: 150px;
+    width: 100%;
     height: 78px;
     padding: 10px 40px;
   }
@@ -2476,11 +2477,6 @@ body {
     width: 100%;
   }
 }
-@media (max-width: 767px) {
-  .dobrograd__palette-color--medium {
-    width: 150px;
-  }
-}
 .dobrograd__palette-color--empty {
   width: 65px;
   background-color: #b7b8b8;
@@ -2488,11 +2484,6 @@ body {
 @media (max-width: 992px) {
   .dobrograd__palette-color--empty {
     width: 100%;
-  }
-}
-@media (max-width: 767px) {
-  .dobrograd__palette-color--empty {
-    width: 150px;
   }
 }
 .dobrograd__palette-color--small {
@@ -2508,7 +2499,6 @@ body {
 }
 @media (max-width: 767px) {
   .dobrograd__palette-color--small {
-    width: 150px;
     height: 78px;
   }
 }
