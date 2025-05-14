@@ -1565,14 +1565,14 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
-    @media (max-width: 991.98px) {
+    @media (max-width: 767.98px) {
       display: none;
     }
   }
 
   &__interview-chat-slider {
     &--desktop {
-      @media (max-width: 991.98px) {
+      @media (max-width: 767.98px) {
         display: none;
       }
     }
@@ -1598,7 +1598,7 @@
       max-height: unset;
       transform: unset;
 
-      @media (max-width: 991.98px) {
+      @media (max-width: 767.98px) {
         width: 312px;
       }
     }
@@ -1612,7 +1612,7 @@
     width: 100%;
     height: 100%;
 
-    @media (max-width: 991.98px) {
+    @media (max-width: 767.98px) {
       align-items: center;
     }
   }
@@ -1627,7 +1627,11 @@
     }
 
     @media (max-width: 991.98px) {
-      gap: 10px;
+      display: none;
+    }
+
+    @media (max-width: 767.98px) {
+      display: flex;
     }
   }
 
@@ -1635,7 +1639,7 @@
     display: none;
     margin-top: 20px;
 
-    @media (max-width: 991.98px) {
+    @media (max-width: 767.98px) {
       display: block;
       width: 550px;
     }
@@ -1682,6 +1686,13 @@
     max-width: 172px;
 
     @media (max-width: 991.98px) {
+      right: unset;
+      left: 50%;
+      bottom: -45px;
+      transform: translateX(-50%);
+    }
+
+    @media (max-width: 767.98px) {
       position: unset;
       justify-content: center;
       max-width: 100%;
@@ -2252,6 +2263,10 @@
       gap: 15px;
     }
 
+    @media (max-width: 992px) {
+      gap: 7px;
+    }
+
     @media (max-width: 767px) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -2520,7 +2535,7 @@
       border-color: #fbd824;
     }
 
-    @media (max-width: 991px) {
+    @media (max-width: 992px) {
       padding: 20px;
     }
 

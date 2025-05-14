@@ -198,6 +198,15 @@ $(document).ready(function () {
           slidesToShow: 1,
         },
       },
+      {
+        breakpoint: 767,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: "5px",
+          slidesToShow: 3,
+        },
+      },
     ],
   });
 
