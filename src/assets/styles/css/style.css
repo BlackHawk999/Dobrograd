@@ -1899,6 +1899,7 @@ body {
     justify-content: center;
     max-width: 100%;
     margin-top: 20px;
+    transform: unset;
   }
 }
 .dobrograd .custom-dots-desktop,
